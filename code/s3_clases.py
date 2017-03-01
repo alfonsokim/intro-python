@@ -23,22 +23,24 @@ class Message():
         self.key = key[:len(self.message)]
         self.message = ''.join(['%s%s' % (a, b) for a, b in zip(self.message[::-1], self.key[::-1])])
 
+    # -------------------------------------------------------------------------
     def decrypt(self):
         self.message = ''.join([c for i, c in enumerate(self.message) if i % 2 == 0])[::-1]
         self.key = None
 
 
 # ============================================================================= 
-m = Message('contrasenia secreta')
-print m.message
-print m.is_encrypted()
-m.encrypt('s4bRumA+aks3eGasw?WA')
-print m.message
-print m.is_encrypted()
-m.decrypt()
-print m.message
-print m.is_encrypted()
+if __name__ == '__main__':
+    m = Message('contrasenia secreta')
+    print m.message
+    print m.is_encrypted()
+    m.encrypt('s4bRumA+aks3eGasw?WA')
+    print m.message
+    print m.is_encrypted()
+    m.decrypt()
+    print m.message
+    print m.is_encrypted()
 
-m2 = Message('otra contrasenia', 'WrE6age&RecHub6ph!fr')
-print m2.message
-print m2.is_encrypted()
+    m2 = Message('otra contrasenia', 'WrE6age&RecHub6ph!fr')
+    print m2.message
+    print m2.is_encrypted()
