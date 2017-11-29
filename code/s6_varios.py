@@ -38,15 +38,15 @@ def timer(f):
 import math
 
 @timer
-def expensive(test_f, n):
+def test_function(test_f, n):
     return [test_f(x) for i in range(n) for x in range(i)]
 
 test1 = lambda x: x**0.5
 test2 = lambda x: math.log(x+1, 3)
 test3 = lambda x: x / 2
 
-expensive(test1, 100)
-expensive(test2, 100)
-expensive(test3, 100)
+test_function(test1, 1000)
+test_function(test2, 1000)
+test_function(test3, 1000)
 
 

@@ -55,29 +55,30 @@ print pares2
 print 'Comprension de listas 2'
 numeros = range(0, 5)
 print numeros
+"""
 
-print '---'
+"""
+print '--- anidadas'
 anidadas = [range(x) for x in numeros]
 print anidadas
 """
 
 """
-print '---'
+print '--- cuadrados'
 cuadrados = [e**2 for interna in anidadas for e in interna]
 print cuadrados
 """
 
 """
-print '---'
+print '--- doble anidadas'
 doble_anidadas = [[range(e)] for interna in anidadas for e in interna]
 print doble_anidadas
 print len(doble_anidadas)
 """
 
 """
-print '---'
-doble_anidadas_2 = [[range(e) for interna in anidadas] for e in interna]
+print '--- doble anidadas 2'
+doble_anidadas_2 = [[range(e) for e in interna] for interna in anidadas]
 print doble_anidadas_2
 print len(doble_anidadas_2)
 """
-

@@ -18,9 +18,9 @@ class Message():
         """ ESTO NO ES UNA FORMA DE CIFRADO. SOLO PARA DEMOSTRACION.
             NUNCA USAR PARA MANEJO DE CONTRASENIAS O SIMILARES
         """
-        while len(key) < len(self.message):
+        while len(key) < len(self.message):  # hacer la llave del mismo tamanio que el mensaje
             key += key
-        self.key = key[:len(self.message)]
+        self.key = key[:len(self.message)]  
         self.message = ''.join(['%s%s' % (a, b) for a, b in zip(self.message[::-1], self.key[::-1])])
 
     # -------------------------------------------------------------------------
